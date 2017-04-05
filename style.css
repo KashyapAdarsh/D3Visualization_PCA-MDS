@@ -1,0 +1,209 @@
+body {
+       font: 11px sans-serif;
+}
+.axis path,
+.point {
+       stroke: black;
+}
+
+.bar { fill: steelblue; }
+
+.tooltip {
+       position: absolute;
+       width: 200px;
+       height: 28px;
+       pointer-events: none;
+}
+
+#chart1 {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 50px;
+	padding-top: 0px;
+}
+
+#chart2 {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 50px;
+	padding-top: 0px;
+}
+
+#chart3 {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 50px;
+	padding-top: 0px;
+}
+
+#chart4 {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 50px;
+	padding-top: 0px;
+}
+
+#chart5 {
+   	margin-left: 18%;
+	margin-right: 5%;
+	margin-top: 50px;
+	padding-top: 0px;
+    margin-bottom: 20px;
+}
+
+/* Style the tab */
+div.tab {
+    margin-left: 20%;
+	margin-right: 20%;
+    overflow: hidden;
+    border: 2px solid #173e43;
+    background-color: #173e43;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    width: 33.333%;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #3fb0ac;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #3fb0ac;
+}
+
+#container {
+    display: table;  
+    width: 50%;
+    margin-left: 25%;
+}
+
+#container div {
+    display: table-cell; 
+    text-align: center;
+} 
+
+input[type=radio]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 3em;
+  opacity   : 0;
+}
+
+input[type=radio]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+  color: #173e43;
+  font-size: 15px;  
+}
+
+input[type=radio]:not(old) + label > span{
+  display          : inline-block;
+  width            : 1.1em;
+  height           : 1.1em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  border-radius    : 0.25em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(#173e43,#173e43);
+  background-image :     -ms-linear-gradient(#173e43,#173e43);
+  background-image :      -o-linear-gradient(#173e43,#173e43);
+  background-image : -webkit-linear-gradient(#173e43,#173e43);
+  background-image :         linear-gradient(#173e43,#173e43);
+  vertical-align   : bottom;
+}
+
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+
+input[type=radio]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 0.60em;
+  height           : 0.60em;
+  margin           : 0.178em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.125em;
+  background       : rgb(153,204,102);
+  background-image :    -moz-linear-gradient(#3fb0ac,#3fb0ac);
+  background-image :     -ms-linear-gradient(#3fb0ac,#3fb0ac);
+  background-image :      -o-linear-gradient(#3fb0ac,#3fb0ac);
+  background-image : -webkit-linear-gradient(#3fb0ac,#3fb0ac);
+  background-image :         linear-gradient(#3fb0ac,#3fb0ac);
+}
+
+p {
+   align-content: center; 
+}
+
+/* Style the tab content */
+.tabcontent {
+    margin-left: 20%;
+	  margin-right: 20%;
+    display: none;
+    margin-top: -15px;
+    padding-top: 30px;
+    border: 2px solid #173e43;
+    border-top: none;
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: steelblue;
+    fill: none;
+}
+
+.axis2 line {
+  stroke: #ddd;
+}
+
+.axis2 path {
+  display: none;
+}
+
+.cell text {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.frame {
+  fill: none;
+  stroke: #aaa;
+}
+
+circle {
+  fill-opacity: .7;
+}
+
+circle.hidden {
+  fill: #ccc !important;
+}
+
+.extent {
+  fill: #000;
+  fill-opacity: .125;
+  stroke: #fff;
+}

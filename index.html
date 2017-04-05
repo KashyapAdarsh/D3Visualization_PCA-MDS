@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scatter.js"></script>
+    <script src="line.js"></script>
+    <script src="bar.js"></script>
+    <script src="receive_data.js"></script>
+    <script src="tab.js"></script>
+    <script src="scatter_matrix.js"></script>
+    
+</head>
+<body>
+<h2 style="margin-left:45%;">Visualization lab-2</h2>
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Elbow')">Task1</button>
+    <button class="tablinks" onclick="openCity(event, 'Scree_Plot')">Task2</button>
+    <button class="tablinks" onclick="openCity(event, 'Scatter_Plot')">Task3</button>
+</div>
+
+<div id="Scatter_Plot" class="tabcontent">
+<h2 align="center">Scatter matrix with highest PCA loaded attributes</h2>
+
+<div id = "container">
+     <div><input id = "one" type="radio" name="Matrixdata" checked="checked" onclick="getData('scatter_matrix_random','#chart5')"><label for="one"><span><span></span></span>Random Data</label></div>
+     <div><input id = "two" type="radio" name="Matrixdata" onclick="getData('scatter_matrix_stratified','#chart5')"><label for="two"><span><span></span></span>Stratified</label></div>
+ </div>
+
+ <div id = "chart5" style="height:600px; width:90%; clear:both;">
+     <script>
+        getData("scatter_matrix_random", "#chart5");
+     </script>
+ </div>
+
+ <div id = "container">
+     <div><input id = "one" type="radio" name="distance" onclick="getData('euclidian_scatter','#chart1')"><label for="one"><span><span></span></span>Euclidian</label></div>
+     <div><input id="two" type="radio" name="distance" checked="checked" onclick="getData('correlation_scatter','#chart1')"><label for="two"><span><span></span></span>Correlation</label></div>
+     <div><input id="three" type="radio" name="distance"  onclick="getData('pca_scatter','#chart1')"><label for="three"><span><span></span></span>PCA</label></div>
+ </div>
+    
+  <div id = "chart1" style="height:500px; width:90%; clear:both;">
+    <script>
+         getData("correlation_scatter", "#chart1");
+    </script>
+  </div>
+  
+
+</div>
+
+<div id="Scree_Plot" class="tabcontent">
+  <h2 align="center"> Scree plot</h2>
+   <div id = "container">
+     <div><input id = "one" type="radio" name="data" onclick="getData('scree_random','#chart2')"><label for="one"><span><span></span></span>Random Data</label></div>
+     <div><input id = "two" type="radio" name="data" checked="checked" onclick="getData('scree_stratified','#chart2')"><label for="two"><span><span></span></span>Stratified</label></div>
+ </div>
+  <div id = "chart2" style="height:500px; width:90%; clear:both;">
+    <script>
+        getData("scree_random", "#chart2");
+    </script>
+  </div>
+  <p align="center">From the above shown scree plot we can see that first three components contribute about 96% of the variance and hence the intrinsic dimensionality of the given data is 3.</p>
+  <h2 align="center"> Graph to get top 3 PCA loadings</h2>
+  <div id = "chart4" style="height:500px; width:90%; clear:both;">
+    <script>
+        getData("squared_loadings", "#chart4");
+    </script>
+  </div>
+  <p align="center">From the above shown graph we need to pick three components with highest PCA loadings. Top three are the ones above marked line.</p>
+</div>
+
+<div id="Elbow" class="tabcontent">
+  <h2 align="center"> Below shown is the elbow graph generated to choose optimal 'k' value for KMeans</h2>
+  <div id = "chart3" style="height:500px; width:90%; clear:both;">
+    <script>
+        getData("elbow", "#chart3");
+    </script>
+  </div>
+  <p align="center">From the graph we pick 3 as the best 'k' for our data set.</p>
+</div>
+
+<script>
+    tablinks = document.getElementsByClassName("tablinks");
+    tablinks[0].className = tablinks[0].className.replace(" active", "");
+    document.getElementById("Scatter_Plot").style.display = "block";
+    
+</script>
+
+</body>
+</html>
